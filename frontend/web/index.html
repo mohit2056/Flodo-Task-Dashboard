@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+  <title>Flodo Task App</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #100C1A; /* Tera dark theme color */
+    }
+    #vanta-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* Ise Flutter ke piche rakhne ke liye */
+    }
+  </style>
+</head>
+<body>
+  <div id="vanta-bg"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  
+  <script>
+    // 🚀 High Quantity + High Performance Hack
+    window.addEventListener('DOMContentLoaded', () => {
+      VANTA.BIRDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+
+        // 👇 THE SECRET WEAPON (Performance Hack) 👇
+        // Isko 1.0 se 1.5 kar diya. Ye quality thodi si gira kar speed double kar dega!
+        scale: 1.5, 
+        scaleMobile: 2.0,
+
+        backgroundColor: 0x100C1A, 
+        color1: 0x8b5cf6, 
+        color2: 0x00ffff, 
+        colorMode: "variance",
+        
+        // 👇 BIRDS WAPAS BADHA DIYE 👇
+        quantity: 4.0,      // Wapas 4.0 kar diya jisse jhund dikhega
+        birdSize: 1.2,      
+        wingSpan: 15.00,    
+        speedLimit: 3.50,   // Speed thodi si badha di natural feel ke liye
+        separation: 50.00,
+        cohesion: 20.00
+      })
+    })
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
